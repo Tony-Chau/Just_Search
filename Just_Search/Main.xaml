@@ -58,9 +58,8 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Main" sap:VirtualizedContainerService.HintSize="738,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="NewTransaction" />
       <Variable x:TypeArguments="x:String" Name="search" />
-      <Variable x:TypeArguments="x:Boolean" Name="appove" />
+      <Variable x:TypeArguments="x:Boolean" Name="approve" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -82,7 +81,7 @@
           <av:PointCollection x:Key="ConnectorLocation">390,255.5 390,296.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Receive message" sap:VirtualizedContainerService.HintSize="553,1039" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="Receive message" sap:VirtualizedContainerService.HintSize="553,1101" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -90,13 +89,13 @@
         </sap:WorkflowViewStateService.ViewState>
         <Assign sap:VirtualizedContainerService.HintSize="531,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
-            <OutArgument x:TypeArguments="x:Boolean">[appove]</OutArgument>
+            <OutArgument x:TypeArguments="x:Boolean">[approve]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
         </Assign>
-        <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="531,443" sap2010:WorkflowViewState.IdRef="PythonScope_1">
+        <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="531,443" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Program Files (x86)\Python36-32">
           <p:PythonScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -127,9 +126,9 @@
             </ActivityAction>
           </p:PythonScope.Body>
         </p:PythonScope>
-        <If Condition="[search.Contains(&quot;computer search&quot;)]" sap:VirtualizedContainerService.HintSize="531,332" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[search.Contains(&quot;computer search&quot;)]" sap:VirtualizedContainerService.HintSize="531,394" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,18 +136,19 @@
               </sap:WorkflowViewStateService.ViewState>
               <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[appove]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean">[approve]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                 </Assign.Value>
               </Assign>
+              <j:SortWord DisplayName="Sort word" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="SortWord_1" Word="[search]" fixedword="[search]" />
             </Sequence>
           </If.Then>
           <If.Else>
             <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[appove]</OutArgument>
+                <OutArgument x:TypeArguments="x:Boolean">[approve]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>

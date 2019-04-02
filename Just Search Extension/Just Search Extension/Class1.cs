@@ -23,4 +23,21 @@ namespace Just_Search_Extension
             Process.Start(web);
         }
     }
+
+    public class SortWord : CodeActivity
+    {
+        [Category("Input")]
+        public InArgument<string> Word { get; set; }
+
+        [Category("Output")]
+        public OutArgument<string> fixedword { get; set; }
+
+        protected override void Execute(CodeActivityContext context)
+        {
+            string word = Word.Get(context);
+            int index = word.IndexOf("computer search") + 16;
+            int length = word.Length - index;
+            fixedword.Set(context, word.Substring(index, length));
+        }
+    }
 }
