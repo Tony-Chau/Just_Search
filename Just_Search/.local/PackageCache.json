@@ -121,10 +121,10 @@
     {
       "Package": {
         "Id": "JustSearchExtension",
-        "Version": "1.0.2"
+        "Version": "1.1.1"
       },
       "Assemblies": [
-        "C:\\Users\\tony_\\.nuget\\packages\\justsearchextension/1.0.2\\lib/Just Search Extension.dll"
+        "C:\\Users\\tony_\\.nuget\\packages\\justsearchextension/1.1.1\\lib/Just Search Extension.dll"
       ]
     }
   ],
@@ -172,7 +172,7 @@
     },
     "JustSearchExtension": {
       "Id": "JustSearchExtension",
-      "Version": "1.0.2",
+      "Version": "1.1.1",
       "Dependencies": []
     },
     "Microsoft.Exchange.WebServices": {

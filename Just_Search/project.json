@@ -8,7 +8,7 @@
     "UiPath.Excel.Activities": "[2.5.2]",
     "UiPath.Mail.Activities": "[1.3.0]",
     "UiPath.Python.Activities": "[1.1.6863.33404]",
-    "JustSearchExtension": "[1.0.2]"
+    "JustSearchExtension": "[1.1.1]"
   },
   "schemaVersion": "3.2",
   "studioVersion": "19.3.0.0",

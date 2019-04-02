@@ -6,7 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Web;
+using System.Windows.Forms;
 namespace Just_Search_Extension
 {
 
@@ -19,7 +20,9 @@ namespace Just_Search_Extension
         protected override void Execute(CodeActivityContext context)
         {
             string q = query.Get(context);
-            ProcessStartInfo web = new ProcessStartInfo("www.google.com/search?" + q);
+            q = q.Replace(" ", "%20");
+            string url = "www.google.com/search?q=" + q;
+            ProcessStartInfo web = new ProcessStartInfo(url);
             Process.Start(web);
         }
     }
